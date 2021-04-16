@@ -1,0 +1,10 @@
+a=zeros(1140,912);
+a(571,457)=1;
+
+kk=15;
+w=fspecial('gaussian',[kk,kk],5);
+a=imfilter(a,w,'replicate');
+k=0.003;
+a(a>k)=1;a(a<=k)=0;
+imshow(mat2gray(a));
+ imwrite(a,'C:\Users\Administrator\Desktop\新建文件夹 (6)\20.bmp');
